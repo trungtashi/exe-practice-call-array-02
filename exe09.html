@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="val">
+    <button onclick="addNewArr()">Thêm vào mảng</button>
+    <button onclick="checkCharInArr()">Check</button>
+    <p id="showArr"></p>
+    <p id="result"></p>
+    <script>
+        let length = Number(prompt(' Nhập độ dài của mảng'));
+        let array = new Array(length);
+        let i = 0;
+        function addNewArr()
+        {
+            let val = document.getElementById('val').value;
+            array[i] = val;
+            i++;
+            if ( i > length)
+            {
+                alert('thua so');
+                i--;
+                array.pop();
+            }
+            document.getElementById('showArr').innerHTML = array;
+            document.getElementById('val').value = '';
+        }
+        function checkCharInArr()
+        {
+            let character = prompt(' Nhập ký tự muốn kiểm tra');
+            let count = 0
+            for ( let j = 0 ; j < length; j++)
+            {
+                if (character === array[j]){
+                    count++;
+                    alert('Ký tự ' + character + ' xuất hiện ' + count + ' lần trong mảng');
+                }
+            }
+            
+        }
+    
+    
+    </script>
+</body>
+</html>

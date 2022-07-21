@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</title>
+</head>
+<body>
+    <!-- Chu vi hình tròn -->
+    <label >
+        <p>Tính chu vi và diện tích hình tròn: </p>
+        <input type="number" id="countPerimeterCircle" placeholder="Nhập bán kính hình tròn">
+        <button type="button" onclick="showCountPerimeterCircle()">Tính chu vi</button>
+        <button type="button" onclick="showCountAreaCircle()">Tính diện tích hình tròn</button>
+    </label>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <script>
+        let C
+        let S
+        function doCountPerimeterCircle(){
+            let R = document.getElementById('countPerimeterCircle').value
+            C = R*2 * Math.PI
+            return C
+        }
+        function showCountPerimeterCircle(){
+            document.getElementById('result1').innerHTML = 'Chu vi hình tròn là: ' + doCountPerimeterCircle()
+        }
+        function doCountAreaCircle(){
+            let R = document.getElementById('countPerimeterCircle').value
+            S = R**2 * Math.PI
+            return S
+        }
+        function showCountAreaCircle(){
+            document.getElementById('result2').innerHTML = 'Diện tích hình tròn là: ' + doCountAreaCircle()
+        }
+    </script>
+</body>
+</html>
